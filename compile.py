@@ -48,7 +48,7 @@ with open("tables/slides.csv", "rt", newline = "") as f:
 
 # Opens each template and renders it into the corresponding 
 # for (page_name, page) in context["pages"]:
-for (page_name, page) in [context["pages"][0]]:
+for (page_name, page) in [["Index", "index"]]:
     template = env.get_template(page+".html")
     print("rendering " + page_name)
     f = open(page+".html", "wt")

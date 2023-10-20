@@ -10719,10 +10719,13 @@ textarea.form-control-lg {
     display: none !important;
   }
 }
+.tab-pane {
+  outline: none;
+}
+
 #nav-home {
   scroll-snap-type: y mandatory;
   overflow-y: scroll;
-  outline: none;
   max-height: 87vh;
 }
 #nav-home > div {
@@ -10730,11 +10733,10 @@ textarea.form-control-lg {
   scroll-snap-align: center;
 }
 
-@media (min-width: 992px) {
-  #alma-matter-label {
-    background-color: #ffc107;
-  }
+#alma-matter-label {
+  background-color: #ffc107;
 }
+
 .carousel-item {
   background-image: linear-gradient(90deg, #212529, #343a40 15% 85%, #212529);
 }

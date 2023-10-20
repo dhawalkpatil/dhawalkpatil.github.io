@@ -25,10 +25,13 @@ $custom-utilities : (
         )
 );
 
+.tab-pane{
+  @extend .tab-pane;
+  outline: none;
+}
 #nav-home {
   scroll-snap-type: y mandatory;
   overflow-y: scroll;
-  outline: none;
   max-height: 87vh;
   > div{
     height: 83vh;
@@ -37,11 +40,12 @@ $custom-utilities : (
 }
 
 @include media-breakpoint-up(lg) {
-  #alma-matter-label{
-    // background: linear-gradient($warning 60% 61%, white 61% 100%);
-    background-color: $warning;
-  }
 }
+#alma-matter-label{
+  // background: linear-gradient($warning 60% 61%, white 61% 100%);
+  background-color: $warning;
+}
+
 .carousel-item {
   background-image: linear-gradient(90deg, $gray-900, $gray-800 15% 85%, $gray-900);
   img{
