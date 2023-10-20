@@ -1,0 +1,73 @@
+@import "../bootstrap/scss/bootstrap";
+
+$custom-utilities : (
+    "max-width": (
+          property: max-width,
+          class: mw,
+          values: (
+            25: 25%,
+            50: 50%,
+            75: 75%,
+            100: 100%,
+            auto: auto
+            )
+        ),
+    "max-height": (
+          property: max-height,
+          class: mh,
+          values: (
+            25: 25%,
+            50: 50%,
+            75: 75%,
+            100: 100%,
+            auto: auto
+            )
+        )
+);
+
+#nav-home {
+  scroll-snap-type: y mandatory;
+  overflow-y: scroll;
+  outline: none;
+  max-height: 87vh;
+  > div{
+    height: 83vh;
+    scroll-snap-align: center;
+  }
+}
+
+@include media-breakpoint-up(lg) {
+  #alma-matter-label{
+    // background: linear-gradient($warning 60% 61%, white 61% 100%);
+    background-color: $warning;
+  }
+}
+.carousel-item {
+  background-image: linear-gradient(90deg, $gray-900, $gray-800 15% 85%, $gray-900);
+  img{
+  max-height: 75vh;
+  }
+}
+.list-group-numbered > .list-group-item::before{
+  @extend .p-0, .ms-0, .fw-bold;
+  text-align: right;
+  width: 2.5rem;
+}
+
+.my-numbered-table{
+  counter-reset: cell;
+  >*{
+    >*{
+      >.my-numbered-cell::before{
+        @extend .fw-bold;
+        content: counters(cell, ".")". ";
+        counter-increment: cell;
+      }
+    }
+  }
+}
+
+// $navbar-color :$dark;
+// nav {
+//   background-image: linear-gradient(0deg, scale-color($navbar-color, $lightness :10%), $navbar-color 20% 80%, scale-color($navbar-color, $lightness :10%));
+// }
